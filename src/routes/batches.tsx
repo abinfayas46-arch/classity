@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SimplePage } from "@/components/classity-pages";
+export const Route = createFileRoute("/batches")({ head: () => ({ meta: [{ title: "Batches — Classity" }, { name: "description", content: "Manage coaching batches and fee health by group." }, { property: "og:title", content: "Batches — Classity" }, { property: "og:description", content: "Manage coaching batches and fee health by group." }] }), component: () => <SimplePage kind="batches" /> });

@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SimplePage } from "@/components/classity-pages";
+export const Route = createFileRoute("/receipts")({ head: () => ({ meta: [{ title: "Receipts — Classity" }, { name: "description", content: "Find and share digital fee receipts." }, { property: "og:title", content: "Receipts — Classity" }, { property: "og:description", content: "Find and share digital fee receipts." }] }), component: () => <SimplePage kind="receipts" /> });

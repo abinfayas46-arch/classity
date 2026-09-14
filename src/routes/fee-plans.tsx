@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { FeePlansPage } from "@/components/classity-pages";
+export const Route = createFileRoute("/fee-plans")({ head: () => ({ meta: [{ title: "Fee Plans — Classity" }, { name: "description", content: "Configure recurring monthly fee plans for every batch." }, { property: "og:title", content: "Fee Plans — Classity" }, { property: "og:description", content: "Configure recurring centre fee plans." }] }), component: FeePlansPage });
