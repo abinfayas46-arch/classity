@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { ClassityLogo } from "@/components/classity-shell";
 import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/auth")({ head: () => ({ meta: [{ title: "Sign in — Classity" }, { name: "description", content: "Sign in to manage your coaching centre's fee operations." }, { property: "og:title", content: "Sign in — Classity" }, { property: "og:description", content: "Sign in to manage your coaching centre's fee operations." }] }), component: AuthPage });
+export const Route = createFileRoute("/auth")({ head: () => ({ meta: [{ title: "Sign in — Classity" }, { name: "description", content: "Sign in to manage your coaching centre's fee operations." }, { property: "og:title", content: "Sign in — Classity" }, { property: "og:description", content: "Sign in to manage your coaching centre's fee operations." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: AuthPage });
 
 function AuthPage() {
   const navigate = useNavigate();

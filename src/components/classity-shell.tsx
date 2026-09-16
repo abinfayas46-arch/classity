@@ -53,7 +53,7 @@ export function AppShell({ children, title = "Dashboard", onCollect }: { childre
         </main>
       </div>
       <nav className="fixed inset-x-3 bottom-3 z-30 grid grid-cols-5 rounded-2xl bg-sidebar p-1.5 text-sidebar-foreground shadow-2xl md:hidden">
-        {[navItems[0], navItems[1], navItems[2], navItems[4]].map((item) => { const Icon = iconMap[item.icon as keyof typeof iconMap]; return <Link key={item.to} to={item.to} className={`flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-xl text-[10px] font-medium ${location.pathname === item.to ? "bg-sidebar-accent text-sidebar-accent-foreground" : "text-sidebar-foreground/70"}`}><Icon className="size-4" /><span>{item.label === "Fee Collection" ? "Collect" : item.label === "WhatsApp" ? "Reminders" : item.label}</span></Link>; })}
+        {navItems.filter((_, index) => [0, 1, 2, 4].includes(index)).map((item) => { const Icon = iconMap[item.icon as keyof typeof iconMap]; return <Link key={item.to} to={item.to} className={`flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-xl text-[10px] font-medium ${location.pathname === item.to ? "bg-sidebar-accent text-sidebar-accent-foreground" : "text-sidebar-foreground/70"}`}><Icon className="size-4" /><span>{item.label === "Fee Collection" ? "Collect" : item.label === "WhatsApp" ? "Reminders" : item.label}</span></Link>; })}
         <button className="flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-xl text-[10px] font-medium text-sidebar-foreground/70" onClick={() => setMobileOpen(true)}><Menu className="size-4" /><span>More</span></button>
       </nav>
     </div>

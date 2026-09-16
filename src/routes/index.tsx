@@ -7,7 +7,7 @@ import { AppShell, SectionHeader, Surface } from "@/components/classity-shell";
 import { feeRows, formatInr } from "@/lib/classity-data";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "Classity Dashboard — Fee operations" }, { name: "description", content: "See collection, pending fees, overdue payments, and the next action for Bright Future Academy." }, { property: "og:title", content: "Classity Dashboard — Fee operations" }, { property: "og:description", content: "A calm operating view for daily coaching-centre fee collection." }] }),
+  head: () => ({ meta: [{ title: "Classity Dashboard — Fee operations" }, { name: "description", content: "See collection, pending fees, overdue payments, and the next action for Bright Future Academy." }, { property: "og:title", content: "Classity Dashboard — Fee operations" }, { property: "og:description", content: "A calm operating view for daily coaching-centre fee collection." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   component: Dashboard,
 });
 
