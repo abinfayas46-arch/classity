@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { AppShell, SectionHeader, Surface } from "@/components/classity-shell";
 import { feeRows, formatInr } from "@/lib/classity-data";
 
-const studentRows = [
+const studentRows: Array<[string, string, string, string, string, string]> = [
   ["Aarav Menon", "AM", "JEE 2027", "Ramesh Menon", "₹3,000", "Partial"],
   ["Diya Sharma", "DS", "NEET 2027", "Sunita Sharma", "₹4,500", "Overdue"],
   ["Ishaan Nair", "IN", "Class 10 Maths", "Deepa Nair", "Paid", "Active"],
