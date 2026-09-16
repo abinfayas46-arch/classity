@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BatchesRouteImport } from './routes/batches'
+import { Route as FeePlansRouteImport } from './routes/fee-plans'
+import { Route as FeesRouteImport } from './routes/fees'
+import { Route as ReceiptsRouteImport } from './routes/receipts'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as StudentsRouteImport } from './routes/students'
+import { Route as SubscriptionRouteImport } from './routes/subscription'
+import { Route as WhatsappRouteImport } from './routes/whatsapp'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BatchesRoute = BatchesRouteImport.update({
+  id: '/batches',
+  path: '/batches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeePlansRoute = FeePlansRouteImport.update({
+  id: '/fee-plans',
+  path: '/fee-plans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeesRoute = FeesRouteImport.update({
+  id: '/fees',
+  path: '/fees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceiptsRoute = ReceiptsRouteImport.update({
+  id: '/receipts',
+  path: '/receipts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentsRoute = StudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SubscriptionRoute = SubscriptionRouteImport.update({
+  id: '/subscription',
+  path: '/subscription',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatsappRoute = WhatsappRouteImport.update({
+  id: '/whatsapp',
+  path: '/whatsapp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/batches': typeof BatchesRoute
+  '/fee-plans': typeof FeePlansRoute
+  '/fees': typeof FeesRoute
+  '/receipts': typeof ReceiptsRoute
+  '/reports': typeof ReportsRoute
+  '/students': typeof StudentsRoute
+  '/subscription': typeof SubscriptionRoute
+  '/whatsapp': typeof WhatsappRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/batches': typeof BatchesRoute
+  '/fee-plans': typeof FeePlansRoute
+  '/fees': typeof FeesRoute
+  '/receipts': typeof ReceiptsRoute
+  '/reports': typeof ReportsRoute
+  '/students': typeof StudentsRoute
+  '/subscription': typeof SubscriptionRoute
+  '/whatsapp': typeof WhatsappRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/batches': typeof BatchesRoute
+  '/fee-plans': typeof FeePlansRoute
+  '/fees': typeof FeesRoute
+  '/receipts': typeof ReceiptsRoute
+  '/reports': typeof ReportsRoute
+  '/students': typeof StudentsRoute
+  '/subscription': typeof SubscriptionRoute
+  '/whatsapp': typeof WhatsappRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/batches'
+    | '/fee-plans'
+    | '/fees'
+    | '/receipts'
+    | '/reports'
+    | '/students'
+    | '/subscription'
+    | '/whatsapp'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/batches'
+    | '/fee-plans'
+    | '/fees'
+    | '/receipts'
+    | '/reports'
+    | '/students'
+    | '/subscription'
+    | '/whatsapp'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/batches'
+    | '/fee-plans'
+    | '/fees'
+    | '/receipts'
+    | '/reports'
+    | '/students'
+    | '/subscription'
+    | '/whatsapp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  BatchesRoute: typeof BatchesRoute
+  FeePlansRoute: typeof FeePlansRoute
+  FeesRoute: typeof FeesRoute
+  ReceiptsRoute: typeof ReceiptsRoute
+  ReportsRoute: typeof ReportsRoute
+  StudentsRoute: typeof StudentsRoute
+  SubscriptionRoute: typeof SubscriptionRoute
+  WhatsappRoute: typeof WhatsappRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/batches': {
+      id: '/batches'
+      path: '/batches'
+      fullPath: '/batches'
+      preLoaderRoute: typeof BatchesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fee-plans': {
+      id: '/fee-plans'
+      path: '/fee-plans'
+      fullPath: '/fee-plans'
+      preLoaderRoute: typeof FeePlansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fees': {
+      id: '/fees'
+      path: '/fees'
+      fullPath: '/fees'
+      preLoaderRoute: typeof FeesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/receipts': {
+      id: '/receipts'
+      path: '/receipts'
+      fullPath: '/receipts'
+      preLoaderRoute: typeof ReceiptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/students': {
+      id: '/students'
+      path: '/students'
+      fullPath: '/students'
+      preLoaderRoute: typeof StudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/subscription': {
+      id: '/subscription'
+      path: '/subscription'
+      fullPath: '/subscription'
+      preLoaderRoute: typeof SubscriptionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whatsapp': {
+      id: '/whatsapp'
+      path: '/whatsapp'
+      fullPath: '/whatsapp'
+      preLoaderRoute: typeof WhatsappRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  BatchesRoute: BatchesRoute,
+  FeePlansRoute: FeePlansRoute,
+  FeesRoute: FeesRoute,
+  ReceiptsRoute: ReceiptsRoute,
+  ReportsRoute: ReportsRoute,
+  StudentsRoute: StudentsRoute,
+  SubscriptionRoute: SubscriptionRoute,
+  WhatsappRoute: WhatsappRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
