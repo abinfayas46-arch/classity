@@ -1,3 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { SimplePage } from "@/components/classity-pages";
-export const Route = createFileRoute("/subscription")({ head: () => ({ meta: [{ title: "Subscription — Classity" }, { name: "description", content: "Review your Classity plan and centre workspace access." }, { property: "og:title", content: "Subscription — Classity" }, { property: "og:description", content: "Review your Classity plan and centre workspace access." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: () => <SimplePage kind="subscription" /> });
+import { createFileRoute, redirect } from "@tanstack/react-router";
+
+/** Subscription sidebar entry was replaced by Notifications. Keep route for old links. */
+export const Route = createFileRoute("/subscription")({
+  beforeLoad: () => {
+    throw redirect({ to: "/notifications" });
+  },
+  component: () => null,
+});

@@ -3500,18 +3500,6 @@ The application should feel like a product that a real coaching-centre owner wou
 
 Build the application as a polished, production-ready SaaS foundation rather than a simple UI prototype.
 
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://classity.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/028826ae-0ab6-4ff4-8e7d-564e8d7e2c23).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).

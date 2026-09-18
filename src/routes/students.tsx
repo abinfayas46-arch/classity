@@ -1,3 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { StudentsPage } from "@/components/classity-pages";
-export const Route = createFileRoute("/students")({ head: () => ({ meta: [{ title: "Students — Classity" }, { name: "description", content: "Manage students, parents, batches, and fee status in Classity." }, { property: "og:title", content: "Students — Classity" }, { property: "og:description", content: "Manage your coaching centre's student directory." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: StudentsPage });
+import { requireRole } from "@/lib/route-guards";
+
+export const Route = createFileRoute("/students")({
+  beforeLoad: requireRole(["admin"]),
+  head: () => ({ meta: [{ title: "Students — Classity" }, { name: "description", content: "Manage students, parents, batches, and fee status in Classity." }, { property: "og:title", content: "Students — Classity" }, { property: "og:description", content: "Manage your coaching centre's student directory." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
+  component: StudentsPage,
+});

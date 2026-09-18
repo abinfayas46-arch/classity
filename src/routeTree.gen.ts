@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountantRouteImport } from './routes/accountant'
+import { Route as AttendanceRouteImport } from './routes/attendance'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BatchesRouteImport } from './routes/batches'
+import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as FeePlansRouteImport } from './routes/fee-plans'
 import { Route as FeesRouteImport } from './routes/fees'
+import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as ReceiptsRouteImport } from './routes/receipts'
 import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as StudentRouteImport } from './routes/student'
 import { Route as StudentsRouteImport } from './routes/students'
 import { Route as SubscriptionRouteImport } from './routes/subscription'
 import { Route as WhatsappRouteImport } from './routes/whatsapp'
@@ -23,6 +29,16 @@ import { Route as WhatsappRouteImport } from './routes/whatsapp'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountantRoute = AccountantRouteImport.update({
+  id: '/accountant',
+  path: '/accountant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AttendanceRoute = AttendanceRouteImport.update({
+  id: '/attendance',
+  path: '/attendance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -35,6 +51,11 @@ const BatchesRoute = BatchesRouteImport.update({
   path: '/batches',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FeePlansRoute = FeePlansRouteImport.update({
   id: '/fee-plans',
   path: '/fee-plans',
@@ -45,6 +66,11 @@ const FeesRoute = FeesRouteImport.update({
   path: '/fees',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReceiptsRoute = ReceiptsRouteImport.update({
   id: '/receipts',
   path: '/receipts',
@@ -53,6 +79,16 @@ const ReceiptsRoute = ReceiptsRouteImport.update({
 const ReportsRoute = ReportsRouteImport.update({
   id: '/reports',
   path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentRoute = StudentRouteImport.update({
+  id: '/student',
+  path: '/student',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudentsRoute = StudentsRouteImport.update({
@@ -73,24 +109,36 @@ const WhatsappRoute = WhatsappRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accountant': typeof AccountantRoute
+  '/attendance': typeof AttendanceRoute
   '/auth': typeof AuthRoute
   '/batches': typeof BatchesRoute
+  '/calendar': typeof CalendarRoute
   '/fee-plans': typeof FeePlansRoute
   '/fees': typeof FeesRoute
+  '/notifications': typeof NotificationsRoute
   '/receipts': typeof ReceiptsRoute
   '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/student': typeof StudentRoute
   '/students': typeof StudentsRoute
   '/subscription': typeof SubscriptionRoute
   '/whatsapp': typeof WhatsappRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accountant': typeof AccountantRoute
+  '/attendance': typeof AttendanceRoute
   '/auth': typeof AuthRoute
   '/batches': typeof BatchesRoute
+  '/calendar': typeof CalendarRoute
   '/fee-plans': typeof FeePlansRoute
   '/fees': typeof FeesRoute
+  '/notifications': typeof NotificationsRoute
   '/receipts': typeof ReceiptsRoute
   '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/student': typeof StudentRoute
   '/students': typeof StudentsRoute
   '/subscription': typeof SubscriptionRoute
   '/whatsapp': typeof WhatsappRoute
@@ -98,12 +146,18 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accountant': typeof AccountantRoute
+  '/attendance': typeof AttendanceRoute
   '/auth': typeof AuthRoute
   '/batches': typeof BatchesRoute
+  '/calendar': typeof CalendarRoute
   '/fee-plans': typeof FeePlansRoute
   '/fees': typeof FeesRoute
+  '/notifications': typeof NotificationsRoute
   '/receipts': typeof ReceiptsRoute
   '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/student': typeof StudentRoute
   '/students': typeof StudentsRoute
   '/subscription': typeof SubscriptionRoute
   '/whatsapp': typeof WhatsappRoute
@@ -112,36 +166,54 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/accountant'
+    | '/attendance'
     | '/auth'
     | '/batches'
+    | '/calendar'
     | '/fee-plans'
     | '/fees'
+    | '/notifications'
     | '/receipts'
     | '/reports'
+    | '/settings'
+    | '/student'
     | '/students'
     | '/subscription'
     | '/whatsapp'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/accountant'
+    | '/attendance'
     | '/auth'
     | '/batches'
+    | '/calendar'
     | '/fee-plans'
     | '/fees'
+    | '/notifications'
     | '/receipts'
     | '/reports'
+    | '/settings'
+    | '/student'
     | '/students'
     | '/subscription'
     | '/whatsapp'
   id:
     | '__root__'
     | '/'
+    | '/accountant'
+    | '/attendance'
     | '/auth'
     | '/batches'
+    | '/calendar'
     | '/fee-plans'
     | '/fees'
+    | '/notifications'
     | '/receipts'
     | '/reports'
+    | '/settings'
+    | '/student'
     | '/students'
     | '/subscription'
     | '/whatsapp'
@@ -149,12 +221,18 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountantRoute: typeof AccountantRoute
+  AttendanceRoute: typeof AttendanceRoute
   AuthRoute: typeof AuthRoute
   BatchesRoute: typeof BatchesRoute
+  CalendarRoute: typeof CalendarRoute
   FeePlansRoute: typeof FeePlansRoute
   FeesRoute: typeof FeesRoute
+  NotificationsRoute: typeof NotificationsRoute
   ReceiptsRoute: typeof ReceiptsRoute
   ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
+  StudentRoute: typeof StudentRoute
   StudentsRoute: typeof StudentsRoute
   SubscriptionRoute: typeof SubscriptionRoute
   WhatsappRoute: typeof WhatsappRoute
@@ -167,6 +245,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accountant': {
+      id: '/accountant'
+      path: '/accountant'
+      fullPath: '/accountant'
+      preLoaderRoute: typeof AccountantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/attendance': {
+      id: '/attendance'
+      path: '/attendance'
+      fullPath: '/attendance'
+      preLoaderRoute: typeof AttendanceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -183,6 +275,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BatchesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fee-plans': {
       id: '/fee-plans'
       path: '/fee-plans'
@@ -197,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/receipts': {
       id: '/receipts'
       path: '/receipts'
@@ -209,6 +315,20 @@ declare module '@tanstack/react-router' {
       path: '/reports'
       fullPath: '/reports'
       preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student': {
+      id: '/student'
+      path: '/student'
+      fullPath: '/student'
+      preLoaderRoute: typeof StudentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/students': {
@@ -237,12 +357,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountantRoute: AccountantRoute,
+  AttendanceRoute: AttendanceRoute,
   AuthRoute: AuthRoute,
   BatchesRoute: BatchesRoute,
+  CalendarRoute: CalendarRoute,
   FeePlansRoute: FeePlansRoute,
   FeesRoute: FeesRoute,
+  NotificationsRoute: NotificationsRoute,
   ReceiptsRoute: ReceiptsRoute,
   ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
+  StudentRoute: StudentRoute,
   StudentsRoute: StudentsRoute,
   SubscriptionRoute: SubscriptionRoute,
   WhatsappRoute: WhatsappRoute,

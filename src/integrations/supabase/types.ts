@@ -20,11 +20,13 @@ export type Database = {
           capacity: number | null
           course: string
           created_at: string
+          end_date: string | null
           id: string
           is_active: boolean
           name: string
           organization_id: string
           schedule: string | null
+          start_date: string | null
           subject: string | null
           teacher_name: string | null
           updated_at: string
@@ -34,11 +36,13 @@ export type Database = {
           capacity?: number | null
           course: string
           created_at?: string
+          end_date?: string | null
           id?: string
           is_active?: boolean
           name: string
           organization_id: string
           schedule?: string | null
+          start_date?: string | null
           subject?: string | null
           teacher_name?: string | null
           updated_at?: string
@@ -48,11 +52,13 @@ export type Database = {
           capacity?: number | null
           course?: string
           created_at?: string
+          end_date?: string | null
           id?: string
           is_active?: boolean
           name?: string
           organization_id?: string
           schedule?: string | null
+          start_date?: string | null
           subject?: string | null
           teacher_name?: string | null
           updated_at?: string
